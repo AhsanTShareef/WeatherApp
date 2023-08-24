@@ -3,7 +3,7 @@ import pandas as pd
 import requests
 
 # Import US Data
-see = pd.read_csv(r"/Users/atsha/Desktop/Python Projects/Weather Forecasts/us_cities.csv")
+see = pd.read_csv(r"us_cities.csv")
 
 app = FastAPI()
 API_key = 'f74697402610092ac90b3ba16bea0528'  # API key pulled from openweathermap.org. Hard code for API key in URL

@@ -15,7 +15,7 @@ the OpenWeatherMap API for weather data and a CSV file containig US cities for l
    ```bash
    git clone https://github.com/your-username/your-repository.git
 
-   Install the required dependencies:
+Install the required dependencies:
    pip install fastapi pandas request
 
 Usage

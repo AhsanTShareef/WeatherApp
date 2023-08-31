@@ -24,7 +24,7 @@ Install the required dependencies:
 ## Usage
 
 1. Launch the FastAPI application:
-  ```uvicorn main:app --reload```
+  ```uvicorn WeatherAPI:app --reload```
 2. Access the API endpoints in your browser or using a tool like: curl or httpie.
 
 

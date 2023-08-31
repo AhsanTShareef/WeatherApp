@@ -27,37 +27,37 @@ def lat_long(state: str, city: str, county: str):
         raise HTTPException(status_code=503, detail = 'Server unavailable')
 
 
-@app.get("/temperature{temperature}")  # Temperature page for our domain
+@app.get("/temperature")  # Temperature page for our domain
 def temp(state: str, city: str, county: str):
     try:
         results = lat_long(state, city, county)
         temperature = results['main']['temp']
         temp = round(((temperature - 273.15) * (9 / 5) + 32), 2)
-        return f'It is {temp}°F in {city}, {state} currently'
+        return f'Temp: {temp}°F '
     except IndexError:
         raise HTTPException(status_code=404, detail = 'City, State, or County not found.')
     except KeyError:
         raise HTTPException(status_code=500, detail='Weather data error')
 
 
-@app.get("/humidity{humidity}")  # Humidity page for our domain
+@app.get("/humidity")  # Humidity page for our domain
 def humidity(state: str, city: str, county: str):
     try:
         results = lat_long(state, city, county)
         humidity = results['main']['humidity']
-        return f'It is {humidity}% humidity in {city}, {state} currently'
+        return f'Humidity: {humidity}% '
     except IndexError:
         raise HTTPException(status_code=404, detail = 'City, State, or County not found.')
     except KeyError:
         raise HTTPException(status_code=500, detail='Weather data error')
 
 
-@app.get("/weather{weather}")  # Weather description page for our domain
+@app.get("/weather")  # Weather description page for our domain
 def weather(state: str, city: str, county: str):
     try:
         results = lat_long(state, city, county)
         weather_description = results['weather'][0]['description']
-        return f'There are {weather_description} in {city}, {state} currently'
+        return f' Weather Description: {weather_description}'
     except IndexError:
         raise HTTPException(status_code=404, detail = 'City, State, or County not found.')
     except KeyError:
@@ -65,19 +65,19 @@ def weather(state: str, city: str, county: str):
 
 
 
-@app.get("/windspeed{windspeed}")  # Weather description page for our domain
+@app.get("/windspeed")  # Weather description page for our domain
 def windspeed(state: str, city: str, county: str):
     try:
         results = lat_long(state, city, county)
         wind_speed = results['wind']['speed']
-        return f'The wind is moving at {wind_speed} mph in {city}, {state} currently'
+        return f'Windspeed: {wind_speed} mph'
     except IndexError:
         raise HTTPException(status_code=404, detail = 'City, State, or County not found.')
     except KeyError:
         raise HTTPException(status_code=500, detail='Weather data error')
 
 
-@app.post("/coordinates/{coordinates}")  # Returns weather data based on coordinates sent by user.
+@app.post("/coordinates")  # Returns weather data based on coordinates sent by user.
 def coordinates(latitude: float, longitude: float):
     # .get function is used to access data for a server.
     URL = f'https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={API_key}'

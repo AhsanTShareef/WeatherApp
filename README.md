@@ -8,26 +8,30 @@ the OpenWeatherMap API for weather data and a CSV file containig US cities for l
 - FastAPI
 - Pandas 
 - Requests
+- Uvicorn
 
 ## Installation
 
 1. Clone the repository:
-   ```bash
+   ```
    git clone https://github.com/your-username/your-repository.git
+   ```
 
 Install the required dependencies:
+   ```
    pip install fastapi pandas request
-
+   ```
 Usage
 
 1. Launch the FastAPI application:
-  uvicorn main:app --reload
+  ```uvicorn main:app --reload```
 2. Access the API endpoints in your browser or using a tool like curl or httpie.
 
 
-API Endpoints
+**API Endpoints**
 
 Get Temperature
+  
   Get the temperature in Fahrenheit for a given location.
 
   Endpoint: /temperature

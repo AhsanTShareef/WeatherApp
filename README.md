@@ -12,7 +12,7 @@ the OpenWeatherMap API for weather data and a CSV file containig US cities for l
 
 ## Installation
 
-1. Clone the repository:
+Clone the repository:
    ```
    git clone https://github.com/your-username/your-repository.git
    ```
@@ -21,16 +21,16 @@ Install the required dependencies:
    ```
    pip install fastapi pandas request
    ```
-Usage
+## Usage
 
 1. Launch the FastAPI application:
   ```uvicorn main:app --reload```
-2. Access the API endpoints in your browser or using a tool like curl or httpie.
+2. Access the API endpoints in your browser or using a tool like: curl or httpie.
 
 
-**API Endpoints**
+## API Endpoints
 
-Get Temperature
+### Temperature
   
   Get the temperature in Fahrenheit for a given location.
 
@@ -43,7 +43,8 @@ Get Temperature
   county (string): County name
 
 
-Get Humidity
+### Humidity
+  
   Get the humidity percentage for a given location.
 
   Endpoint: /humidity
@@ -55,7 +56,8 @@ Get Humidity
   county (string): County name
 
 
-Get Weather Description
+### Weather Description
+
   Get the weather description for a given location.
   
   Endpoint: /weather
@@ -67,7 +69,8 @@ Get Weather Description
   county (string): County name
 
   
-Get Wind Speed
+### Wind Speed
+
   Get the wind speed in mph for a given location.
   
   Endpoint: /windspeed
@@ -79,7 +82,8 @@ Get Wind Speed
   county (string): County name
 
   
-Get Weather by Coordinates
+### Weather by Coordinates
+
   Get weather information using latitude and longitude.
   
   Endpoint: /coordinates
@@ -89,13 +93,13 @@ Get Weather by Coordinates
   latitude (float): Latitude coordinate
   longitude (float): Longitude coordinate
 
-Note
+## Note
 
   This project uses FastAPI to create a web API.
   Weather data is fetched from the OpenWeatherMap API.
   Location details are sourced from a CSV file containing US cities data.
 
-License
+### License
 
   This project is licensed under the MIT License.
 
